@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+#include <dirent.h>
 #include <time.h>
 #include "colors.h"
 #include "clear.h"
@@ -10,6 +11,7 @@
 #include "text_styles.h"
 #include "demarrer_pomodoro.h"
 #include "minuteure.h"
+#include "create_dir.h"
 void ModType(){
     printf("\n\n");
     printf(
@@ -111,6 +113,12 @@ void manage_type(int user_choice)
                 mod.REPETATIONS=atoi(buffer);
                 break;}
         }
+    }
+    DIR *dir=opendir("setions");
+    if(!dir){
+        char dir_name[200];
+        strcpy(dir_name , "setions");
+        create_directory(dir_name);
     }
     FILE *modtype;
     char path[200];

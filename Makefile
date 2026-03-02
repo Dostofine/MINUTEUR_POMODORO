@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -I include -Wall
+CFLAGS = -I include -Wall -Wpedantic -Werror
 src = $(wildcard src/*.c)
 TARGET = DOSTO_POMODORO
 OUTPUT_DIR=build
@@ -10,3 +10,5 @@ clean:
 
 run:
 	./$(OUTPUT_DIR)/$(TARGET)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@

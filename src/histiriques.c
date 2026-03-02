@@ -14,12 +14,14 @@ void Historique(){
     "       ║   Pomodoro historiques   ║\n"
     "       ╚══════════════════════════╝\n"
     STYLE_RESET RESET);
-
-    DIR *dir = opendir("setions/");
-    struct dirent *entry;
-    while ((entry = readdir(dir)) != NULL) {
-        if (entry->d_name[0] == '.') continue;  // skip hidden files
-        printf(STYLE_BOLD GREEN"       ║ %-24s ║\n"STYLE_RESET RESET, entry->d_name);
+    //verifier if the stions dir exist or not
+    DIR *dir=opendir("setions/");
+    if(dir){
+        struct dirent *entry;
+        while ((entry = readdir(dir)) != NULL) {
+            if (entry->d_name[0] == '.') continue;  // skip hidden files
+            printf(STYLE_BOLD GREEN"       ║ %-24s ║\n"STYLE_RESET RESET, entry->d_name);
+    }
     }
     printf(STYLE_BOLD GREEN"       ╚══════════════════════════╝\n"STYLE_RESET RESET);
     closedir(dir);
