@@ -113,6 +113,21 @@ void manage_type(int user_choice)
                 mod.REPETATIONS=atoi(buffer);
                 break;}
         }
+                while(1)
+        {
+            verifier=true;
+            char buffer[20];
+            printf(STYLE_BOLD BLUE "\n                > enter who much sessions: " RESET STYLE_RESET);
+            fgets(buffer, sizeof(buffer), stdin);
+            buffer[strcspn(buffer, "\n")] = '\0';
+            for(int i=0;i<strlen(buffer);i++){
+                if(!isdigit(buffer[i]))
+                    verifier=false;
+            }
+            if(verifier){
+                mod.SESSIONS=atoi(buffer);
+                break;}
+        }
     }
     DIR *dir=opendir("setions");
     if(!dir){

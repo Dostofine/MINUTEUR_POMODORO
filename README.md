@@ -63,6 +63,8 @@ make
 
 ### 3. Run
 ```bash
+make run 
+or
 ./build/DOSTO_POMODORO
 ```
 

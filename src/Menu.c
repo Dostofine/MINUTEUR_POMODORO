@@ -10,14 +10,14 @@
 #include "Menu.h"
 int VerifierChoix()
 {
-    char buffer[20];
-    printf(STYLE_BLINK BLUE "\n                > saisir votre choix: " RESET STYLE_RESET);
-    fgets(buffer, sizeof(buffer), stdin);
-    buffer[strcspn(buffer, "\n")] = '\0';
-    if (strlen(buffer) == 1 && isdigit(buffer[0]))
-        return atoi(buffer);
-    VerifierChoix();
-    return 0;
+    while(1){
+        char buffer[20];
+        printf(STYLE_BLINK BLUE "\n                > saisir votre choix: " RESET STYLE_RESET);
+        fgets(buffer, sizeof(buffer), stdin);
+        buffer[strcspn(buffer, "\n")] = '\0';
+        if (strlen(buffer) == 1 && isdigit((unsigned char)buffer[0]))
+            return atoi(buffer);
+    }
 }
 void MenuPricipale()
 {

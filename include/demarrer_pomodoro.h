@@ -2,6 +2,7 @@
 #define DEMARRER_POMODORO_H
 typedef struct
 {
+    unsigned int SESSIONS;
     unsigned int TRAVAIL;
     unsigned int P_PAUSE;
     unsigned int G_PAUSE;

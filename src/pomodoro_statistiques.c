@@ -3,12 +3,6 @@
 #include "colors.h"
 #include "demarrer_pomodoro.h"
 void statistiques(mod_type mod){
-    char travail_min[20];
-    char ppause_min[20];
-    char gpause_min[20];
-    snprintf(travail_min, sizeof(travail_min), "%u min", mod.TRAVAIL);
-    snprintf(ppause_min, sizeof(ppause_min), "%u min", mod.P_PAUSE);
-    snprintf(gpause_min, sizeof(gpause_min), "%u min", mod.G_PAUSE);
     printf(RED "\n");
     printf("  ╔══════════════════════════════════════════════╗\n");
     printf("  ║        ⏱  DOSTO POMODORO  -  STATUS          ║\n");
@@ -18,11 +12,13 @@ void statistiques(mod_type mod){
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
     printf("  ║  " GREEN "%-24s" RESET "║" RESET "  " BLUE "%-17s" RESET "║\n", "Nom du pomodoro",  mod.name);
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
-    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17s" RESET "║\n", "Travail",         travail_min);
+    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17u" RESET "║\n", "Travail",         mod.TRAVAIL);
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
-    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17s" RESET "║\n", "Petite Pause",    ppause_min);
+    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17u" RESET "║\n", "Petite Pause",    mod.P_PAUSE);
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
-    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17s" RESET "║\n", "Grande Pause",    gpause_min);
+    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17u" RESET "║\n", "Grande Pause",    mod.G_PAUSE);
+    printf("  ╠══════════════════════════╬═══════════════════╣\n");
+    printf("  ║  " GREEN "%-24s" RESET "║" RESET  BLUE "  %-17u" RESET "║\n", "Sessions",    mod.SESSIONS);
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
     printf("  ║  " GREEN "%-24s" RESET "  ║" RESET "  " BLUE "%-17u"     RESET "║\n", "Répétitions",     mod.REPETATIONS);
     printf("  ╠══════════════════════════╬═══════════════════╣\n");
