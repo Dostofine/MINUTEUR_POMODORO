@@ -16,10 +16,10 @@ void ModType(){
     printf("\n\n");
     printf(
         GREEN "         ╔══════════════════════════════════════════════╗\n" RESET
-        YELLOW"         ║               possibale types                ║\n" RESET
+        YELLOW"         ║               types possibles                ║\n" RESET
         GREEN "         ╠══════════════════════════════════════════════╣\n" RESET
-        GREEN "         ║ 1) Default type                              ║\n" RESET
-        YELLOW"         ║ 2) Costum type                               ║\n" RESET
+        GREEN "         ║ 1) Type par défaut                           ║\n" RESET
+        YELLOW"         ║ 2) Type personnalisé                         ║\n" RESET
         GREEN "         ╚══════════════════════════════════════════════╝\n" RESET
     );
     switch (VerifierChoix())
@@ -42,7 +42,7 @@ void manage_type(int user_choice)
     bool verifier;
     mod_type mod;
     strftime(mod.datetime, sizeof(mod.datetime), "%Y-%m-%d %H:%M:%S", t);
-    printf(STYLE_BOLD BLUE "\n                > enter pomodoro name: " RESET STYLE_RESET);
+    printf(STYLE_BOLD BLUE "\n                > entrer le nom du pomodoro: " RESET STYLE_RESET);
     fgets(mod.name, sizeof(mod.name), stdin);
     mod.name[strcspn(mod.name, "\n")] = '\0';
     if(user_choice==1){
@@ -50,13 +50,14 @@ void manage_type(int user_choice)
         mod.P_PAUSE=5;
         mod.G_PAUSE=30;
         mod.REPETATIONS=4;
+        mod.SESSIONS=1;
     }
     else if(user_choice==2){
         while(1)
         {
             verifier=true;
             char buffer[20];
-            printf(STYLE_BOLD BLUE "\n                > enter the work time: " RESET STYLE_RESET);
+            printf(STYLE_BOLD BLUE "\n                > entrer le temps de travail: " RESET STYLE_RESET);
             fgets(buffer, sizeof(buffer), stdin);
             buffer[strcspn(buffer, "\n")] = '\0';
             for(int i=0;i<strlen(buffer);i++){
@@ -72,7 +73,7 @@ void manage_type(int user_choice)
         {
             verifier=true;
             char buffer[20];
-            printf(STYLE_BOLD BLUE "\n                > enter the short break time: " RESET STYLE_RESET);
+            printf(STYLE_BOLD BLUE "\n                > entrer le temps de courte pause: " RESET STYLE_RESET);
             fgets(buffer, sizeof(buffer), stdin);
             buffer[strcspn(buffer, "\n")] = '\0';
             for(int i=0;i<strlen(buffer);i++){
@@ -87,7 +88,7 @@ void manage_type(int user_choice)
         {
             verifier=true;
             char buffer[20];
-            printf(STYLE_BOLD BLUE "\n                > enter the long break time: " RESET STYLE_RESET);
+            printf(STYLE_BOLD BLUE "\n                > entrer le temps de longue pause: " RESET STYLE_RESET);
             fgets(buffer, sizeof(buffer), stdin);
             buffer[strcspn(buffer, "\n")] = '\0';
             for(int i=0;i<strlen(buffer);i++){
@@ -102,7 +103,7 @@ void manage_type(int user_choice)
         {
             verifier=true;
             char buffer[20];
-            printf(STYLE_BOLD BLUE "\n                > enter who much repetations: " RESET STYLE_RESET);
+            printf(STYLE_BOLD BLUE "\n                > entrer le nombre de répétitions: " RESET STYLE_RESET);
             fgets(buffer, sizeof(buffer), stdin);
             buffer[strcspn(buffer, "\n")] = '\0';
             for(int i=0;i<strlen(buffer);i++){
@@ -117,7 +118,7 @@ void manage_type(int user_choice)
         {
             verifier=true;
             char buffer[20];
-            printf(STYLE_BOLD BLUE "\n                > enter who much sessions: " RESET STYLE_RESET);
+           printf(STYLE_BOLD BLUE "\n                > entrer le nombre de sessions: " RESET STYLE_RESET);
             fgets(buffer, sizeof(buffer), stdin);
             buffer[strcspn(buffer, "\n")] = '\0';
             for(int i=0;i<strlen(buffer);i++){

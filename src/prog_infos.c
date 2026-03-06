@@ -29,7 +29,7 @@ void ProgNameANDVersion(){
     printf("  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
     printf(STYLE_RESET RESET);
     printf(STYLE_BOLD GREEN);
-    printf("                          Version 1.0\n");
+    printf("                          Version 2.0\n");
     printf(STYLE_RESET RESET);
     printf(STYLE_BOLD YELLOW"\n   > Appuyez sur une touche pour continuer... ");
     getchar();

@@ -7,6 +7,7 @@
 #include "colors.h"
 #include "text_styles.h"
 #include "demarrer_pomodoro.h"
+#include "parameters.h"
 #include "Menu.h"
 int VerifierChoix()
 {
@@ -28,8 +29,9 @@ void MenuPricipale()
         GREEN "             ╠══════════════════════════════════════════════╣\n" RESET
         YELLOW"             ║ 1) Démarrer un Pomodoro                      ║\n" RESET
         GREEN "             ║ 2) Voir mes historiques                      ║\n" RESET
-        YELLOW"             ║ 3) Se déconnecter                            ║\n" RESET
-        GREEN "             ╚══════════════════════════════════════════════╝\n" RESET
+        YELLOW"             ║ 3) les paramètres                            ║\n" RESET
+        GREEN "             ║ 4) Se déconnecter                            ║\n" RESET
+        YELLOW"             ╚══════════════════════════════════════════════╝\n" RESET
     );
     switch (VerifierChoix())
     {
@@ -43,11 +45,15 @@ void MenuPricipale()
         break;
     case 3:
         clear();
+        ParameteresMenu();
+        break;
+    case 4:
+        clear();
         printf("\n\n");
         printf(STYLE_BOLD RED);
-        printf("             ╔══════════════════════════════════════════════╗\n");
-        printf("            ║    bye-thank u for using dosto-pomodoro-CLI    ║\n");
-        printf("             ╚══════════════════════════════════════════════╝\n");
+        printf("             ╔═══════════════════════════════════════════════╗\n");
+        printf("            ║ au revoir - merci d'utiliser dosto-pomodoro-CLI ║\n");
+        printf("             ╚═══════════════════════════════════════════════╝\n");
         printf(STYLE_RESET RESET);
         exit(0);
         break;

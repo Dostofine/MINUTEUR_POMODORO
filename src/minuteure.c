@@ -8,6 +8,7 @@
 #include "sleep.h"
 #include "clear.h"
 #include "Menu.h"
+#include "clock_sound.h"
 #include "pomodoro_statistiques.h"
 void SetionMod(mod_type setion_mod)
 {
@@ -22,27 +23,35 @@ void SetionMod(mod_type setion_mod)
     strcpy(setion_name, setion_mod.name);
     strcpy(setion_datetime, setion_mod.datetime);
     statistiques(setion_mod);
+    char sound[200];
+    FILE *file=fopen("pomodoro_parameters/clock_sound.dat","rb");
+    fread(sound,sizeof(char),200,file);
     for(int ses=0;ses<N_sessions;ses++)
     {
+        printf(STYLE_BOLD BLUE"\n #Session %d \n\n"STYLE_RESET RESET,ses+1);
         for(int rep=0;rep<setion_repetitions;rep++){
             if(rep!=setion_repetitions-1){
                 Travail(travail_temps);
+                PlaySound(sound);
                 printf("\a");
                 printf(STYLE_BOLD BLUE"\n\n Pomodoro %d terminé ! \n\n" STYLE_RESET RESET,rep+1);
                 sleep_sec(1);
                 PPause(P_pause_temps);
+                PlaySound(sound);
                 printf("\a");
                 printf(STYLE_BOLD BLUE"\n\n Pause %d terminé ! \n\n" STYLE_RESET RESET,rep+1);
                 sleep_sec(1);
             }
             else{
                 Travail(travail_temps);
+                PlaySound(sound);
                 printf("\a");
                 sleep_sec(1);
             }
         }
         printf(STYLE_BOLD BLUE"\n\n Pomodoro terminé ! Bravo ! \n\n" STYLE_RESET RESET);
         GPause(G_pause_temps);
+        PlaySound(sound);
     }
     MenuPricipale();
 }
