@@ -105,11 +105,11 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 - [✓] Custom session durations
 - [✓] Multiple sound alert options
 - [ ] Visual progress bar in the terminal
-- [ ] Session history and statistics log
-- [ ] Notification popup support (desktop alerts)
-- [ ] Config file to save preferred settings
-- [ ] Color-coded terminal output (work vs break phases)
-- [ ] Pause and resume functionality
+- [✓] Session history and statistics log
+- [✓] Notification popup support (desktop alerts)
+- [✓] Config file to save preferred settings
+- [✓] Color-coded terminal output (work vs break phases)
+
 
 ---
 
