@@ -13,7 +13,7 @@ void PlaySound(char soundname[100])
     }
     #else
     {
-        sprintf(commend,"mpg123 -q 2>/dev/null %s",soundpath);
+        sprintf(commend,"mpg123 -q %s 2>/dev/null",soundpath);
         system(commend);
     }
     #endif
