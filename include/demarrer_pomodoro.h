@@ -10,6 +10,8 @@ typedef struct
     char name[30];
     char datetime[30];
 }mod_type;
-void ModType();
-void manage_type(int user_choice);
+void print_state_info(int state);
+
+int ModType();
+void pomodoro_session();
 #endif
