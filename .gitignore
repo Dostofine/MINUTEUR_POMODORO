@@ -1,2 +1,9 @@
 build/*
 !build/.gitignore
+
+*.dat
+
+.vscode/
+*.json
+
+compile_flags.txt
